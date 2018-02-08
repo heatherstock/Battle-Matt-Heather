@@ -16,8 +16,14 @@ describe Game do
 
   describe "#attack" do
     it "tells a player to recieve damage" do
-      expect(player_1).to receive(:take_damage)
-      game.attack(player_1)
+      expect(player_2).to receive(:take_damage)
+      game.attack(player_2)
+    end
+
+    it "switches to the other players turn" do
+      allow(player_2).to receive(:take_damage)
+      game.attack(player_2)
+      expect(game.turn).to eq player_2
     end
   end
 end
