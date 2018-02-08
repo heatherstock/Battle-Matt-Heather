@@ -5,6 +5,19 @@
 <h1><%= @game.player_2.name %> attacked <%= @game.player_1.name %> -- Attack successful!</h1>
 <h2><%= @game.player_1.name %>: <%= @game.player_1.hp %>HP</h2>
 <% end %>
+
+<% if @game.player_1.hp == 0 %>
+<h1><%=@game.player_1.name%> loses!!!!!!!!</h1>
+<form action="/">
+  <input type="submit" value="New game?" />
+</form>
+<% elsif @game.player_2.hp == 0 %>
+<h1><%=@game.player_2.name%> loses!!!!!!!!</h1>
+<form action="/">
+  <input type="submit" value="New game?" />
+</form>
+<% else %>
 <form action="/attack" method="POST">
   <input type="submit" value="Next turn" />
 </form>
+<% end %>
