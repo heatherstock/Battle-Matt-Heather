@@ -11,6 +11,10 @@ class Game
 
   def attack(player)
     player.take_damage
+    switch_turns
+  end
+
+  def switch_turns
     @turn, @not_turn = @not_turn, @turn
   end
 end
