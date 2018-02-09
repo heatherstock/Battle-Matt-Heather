@@ -13,7 +13,8 @@ describe Player do
 
     describe '#attack' do
       it 'lowers a players hp by 10' do
-        expect { player.take_damage }.to change { player.hp }.by(-described_class::DEFAULT_DAMAGE)
+        srand(6)
+        expect { player.take_damage }.to change { player.hp }.by(-9)
       end
     end
 end

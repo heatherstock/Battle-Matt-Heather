@@ -29,4 +29,13 @@ class Battle < Sinatra::Base
   post '/attack' do
     redirect '/play'
   end
+
+  get '/poison' do
+    @game.poison(@game.not_turn)
+    erb(:poison)
+  end
+
+  post '/poison' do
+    redirect '/play'
+  end
 end

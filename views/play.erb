@@ -1,12 +1,18 @@
-<h1><%= @game.turn.name %>'s turn</h1>  
+<h1><%= @game.turn.name %>'s turn</h1>
 <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %>!</h1>
 <h2><%= @game.player_1.name %>: <%= @game.player_1.hp %>HP <%= @game.player_2.name %>: <%= @game.player_2.hp %>HP</h2>
 <% if @game.turn == @game.player_1 %>
 <form action="/attack" method="get">
   <input type="submit" value="Attack player 2">
 </form>
+<form action="/poison" method="get">
+  <input type="submit" value="Poison player 2">
+</form>
 <% else %>
 <form action="/attack" method="get">
   <input type="submit" value="Attack player 1">
+</form>
+<form action="/poison" method="get">
+  <input type="submit" value="Poison player 1">
 </form>
 <% end %>

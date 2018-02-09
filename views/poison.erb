@@ -1,8 +1,8 @@
 <% if @game.turn == @game.player_2 %>
-<h1><%= @game.player_1.name %> attacked <%= @game.player_2.name %> -- Attack successful!</h1>
+<h1><%= @game.player_1.name %> poisoned <%= @game.player_2.name %> -- Attack successful!</h1>
 <h2><%= @game.player_2.name %>: <%= @game.player_2.hp %>HP</h2>
 <% else %>
-<h1><%= @game.player_2.name %> attacked <%= @game.player_1.name %> -- Attack successful!</h1>
+<h1><%= @game.player_2.name %> poisoned <%= @game.player_1.name %> -- Attack successful!</h1>
 <h2><%= @game.player_1.name %>: <%= @game.player_1.hp %>HP</h2>
 <% end %>
 
@@ -17,7 +17,7 @@
   <input type="submit" value="New game?" />
 </form>
 <% else %>
-<form action="/attack" method="POST">
+<form action="/poison" method="POST">
   <input type="submit" value="Next turn" />
 </form>
 <% end %>
