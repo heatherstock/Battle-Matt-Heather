@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :name, :hp
+  attr_reader :name, :hp, :poison
 
   DEFAULT_HP = 100
   # DEFAULT_DAMAGE = rand(10)
@@ -8,10 +8,15 @@ class Player
   def initialize(name)
     @name = name
     @hp = DEFAULT_HP
+    @poison = false
   end
 
   def take_damage
     @hp -= rand(10)
+  end
+
+  def poison_status
+    @poison = true
   end
 
   def be_poisoned

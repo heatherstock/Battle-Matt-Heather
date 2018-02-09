@@ -31,7 +31,7 @@ class Battle < Sinatra::Base
   end
 
   get '/poison' do
-    @game.poison(@game.not_turn)
+    @game.give_poison(@game.not_turn)
     erb(:poison)
   end
 

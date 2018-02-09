@@ -7,11 +7,11 @@ feature "Switching turns" do
     expect(page).to have_content "Heather vs Matt!" && "Matt: 91HP"
   end
   scenario "After player1 attacks, it switches to player 2's turn" do
-    srand(6)
+    srand(5)
     sign_in_and_play
     click_button "Attack player 2"
     click_button "Next turn"
     click_button "Attack player 1"
-    expect(page).to have_content "-- Attack successful! Heather: 97HP"
+    expect(page).to have_content "-- Attack successful! Heather: 94HP"
   end
 end

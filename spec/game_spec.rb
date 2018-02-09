@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:player_1) { double('player 1') }
-  let(:player_2) { double('player 2') }
+  let(:player_1) { double('player 1', poison: false)}
+  let(:player_2) { double('player 2', poison: false) }
   subject(:game) { described_class.new(player_1, player_2) }
 
   describe "#initialize" do
@@ -27,10 +27,10 @@ describe Game do
     end
   end
 
-  describe "#poison" do
+  describe "#give_poison" do
     it "tells a player to be poisoned" do
-      expect(player_2).to receive(:be_poisoned)
-      game.poison(player_2)
+      expect(player_2).to receive(:poison_status)
+      game.give_poison(player_2)
     end
 
   end

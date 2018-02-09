@@ -22,12 +22,16 @@ class Game
     switch_turns
   end
 
-  def poison(player)
-    player.be_poisoned
+  def give_poison(player)
+    player.poison_status
     switch_turns
   end
 
   def switch_turns
     @turn, @not_turn = @not_turn, @turn
+    @player_1.be_poisoned if @player_1.poison == true
+    @player_2.be_poisoned if @player_2.poison == true
+    @player_1.poison = false if rand(3) == 3
+    @player_2.poison = false if rand(3) == 3
   end
 end
