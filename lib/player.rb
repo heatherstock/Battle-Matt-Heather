@@ -5,10 +5,10 @@ class Player
   DEFAULT_HP = 100
   # DEFAULT_DAMAGE = rand(10)
 
-  def initialize(name)
+  def initialize(name, poison = false)
     @name = name
     @hp = DEFAULT_HP
-    @poison = false
+    @poison = poison
   end
 
   def take_damage
@@ -21,6 +21,10 @@ class Player
 
   def be_poisoned
     @hp -= rand(5)
+  end
+
+  def poison_off
+    @poison = false
   end
 
 end

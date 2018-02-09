@@ -29,9 +29,16 @@ class Game
 
   def switch_turns
     @turn, @not_turn = @not_turn, @turn
+    poison_randomiser
+  end
+
+  private
+
+  def poison_randomiser
     @player_1.be_poisoned if @player_1.poison == true
     @player_2.be_poisoned if @player_2.poison == true
-    @player_1.poison = false if rand(3) == 3
-    @player_2.poison = false if rand(3) == 3
+    @player_1.poison_off if rand(3) == 2
+    @player_2.poison_off if rand(3) == 2
   end
+
 end

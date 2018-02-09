@@ -21,6 +21,7 @@ describe Game do
     end
 
     it "switches to the other players turn" do
+      allow(player_2).to receive(:poison_off)
       allow(player_2).to receive(:take_damage)
       game.attack(player_2)
       expect(game.turn).to eq player_2
@@ -29,6 +30,7 @@ describe Game do
 
   describe "#give_poison" do
     it "tells a player to be poisoned" do
+      allow(player_2).to receive(:poison_off)
       expect(player_2).to receive(:poison_status)
       game.give_poison(player_2)
     end
