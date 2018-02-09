@@ -13,4 +13,9 @@ class Player
   def take_damage
     @hp -= rand(10)
   end
+
+  def be_poisoned
+    @hp -= rand(5)
+  end
+
 end

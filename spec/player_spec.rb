@@ -11,10 +11,17 @@ describe Player do
       expect(player.hp).to eq described_class::DEFAULT_HP
     end
 
-    describe '#attack' do
-      it 'lowers a players hp by 10' do
+    describe '#take_damage' do
+      it 'lowers a players hp by rand(10' do
         srand(6)
         expect { player.take_damage }.to change { player.hp }.by(-9)
+      end
+    end
+
+    describe '#be_poisoned' do
+      it 'lowers a players hp by rand(5)' do
+        srand(6)
+        expect { player.be_poisoned }.to change { player.hp }.by(-2)
       end
     end
 end

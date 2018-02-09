@@ -1,8 +1,8 @@
 <% if @game.turn == @game.player_2 %>
-<h1><%= @game.player_1.name %> poisoned <%= @game.player_2.name %> -- Attack successful!</h1>
+<h1><%= @game.player_1.name %> poisoned <%= @game.player_2.name %> -- Poison successful!</h1>
 <h2><%= @game.player_2.name %>: <%= @game.player_2.hp %>HP</h2>
 <% else %>
-<h1><%= @game.player_2.name %> poisoned <%= @game.player_1.name %> -- Attack successful!</h1>
+<h1><%= @game.player_2.name %> poisoned <%= @game.player_1.name %> -- Poison successful!</h1>
 <h2><%= @game.player_1.name %>: <%= @game.player_1.hp %>HP</h2>
 <% end %>
 

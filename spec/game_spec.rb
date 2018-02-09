@@ -26,4 +26,12 @@ describe Game do
       expect(game.turn).to eq player_2
     end
   end
+
+  describe "#poison" do
+    it "tells a player to be poisoned" do
+      expect(player_2).to receive(:be_poisoned)
+      game.poison(player_2)
+    end
+
+  end
 end

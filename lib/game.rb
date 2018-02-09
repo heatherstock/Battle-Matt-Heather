@@ -22,6 +22,11 @@ class Game
     switch_turns
   end
 
+  def poison(player)
+    player.be_poisoned
+    switch_turns
+  end
+
   def switch_turns
     @turn, @not_turn = @not_turn, @turn
   end
