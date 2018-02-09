@@ -8,11 +8,17 @@
 <form action="/poison" method="get">
   <input type="submit" value="Poison player 2">
 </form>
+<form action="/heal" method="get">
+  <input type="submit" value="Heal player 1">
+</form>
 <% else %>
 <form action="/attack" method="get">
   <input type="submit" value="Attack player 1">
 </form>
 <form action="/poison" method="get">
   <input type="submit" value="Poison player 1">
+</form>
+<form action="/heal" method="get">
+  <input type="submit" value="Heal player 2">
 </form>
 <% end %>

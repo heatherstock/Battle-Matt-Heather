@@ -30,6 +30,15 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
+  get '/heal' do
+    @game.heal(@game.turn)
+    erb(:heal)
+  end
+
+  post '/heal' do
+    redirect '/play'
+  end
+
   get '/poison' do
     @game.give_poison(@game.not_turn)
     erb(:poison)

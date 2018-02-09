@@ -22,6 +22,11 @@ class Game
     switch_turns
   end
 
+  def heal(player)
+    player.heal_self
+    switch_turns
+  end
+
   def give_poison(player)
     player.poison_status
     switch_turns

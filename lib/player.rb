@@ -15,6 +15,10 @@ class Player
     @hp -= rand(10)
   end
 
+  def heal_self
+    @hp += rand(5)
+  end
+
   def poison_status
     @poison = true
   end
